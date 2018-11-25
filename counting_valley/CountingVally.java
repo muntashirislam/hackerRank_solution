@@ -6,28 +6,28 @@ public class CountingVally {
 		// TODO Auto-generated method stub
 		String s = "UDDDUDUU";
 		int steps = 8;
-		
-
+		int counting = countingValleys(steps, s);
+		System.out.println(counting);
 	}
 	static int countingValleys(int n, String s) {
 
-		int valley = 0;
-		int[] position =new int [n];
-		int stepcount = 0;
+		int val = 0;
+		int[] pos =new int [n];
+		int step = 0;
 		for (int i=0;i<n; i++) {
 			if (s.charAt(i)=='U') {
-				stepcount++;
+				step++;
 			}else {
-				stepcount--;
+				step--;
 			}
-			position[i]=stepcount;
+			pos[i]=step;
 		}
 		for(int i=1; i<n; i++) {
-			if((position[i-1]==-1) && position[i]==0) {
-				valley++;
+			if((pos[i-1]==-1) && pos[i]==0) {
+				val++;
 			}
 		}
 		
-			return valley;
+			return val;
     }
 }
